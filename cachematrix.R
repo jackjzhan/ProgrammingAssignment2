@@ -2,6 +2,12 @@
 ## Written by Jack Zhan
 ## 01/22/2018
 
+# The first function, makeMaxtrix creates a special "matrix", which is really a list containing a function to
+# set the value of the matrix
+# get the value of the matrix
+# set the value of the inverse matrix
+# get the inverse matrix
+
 makeMatrix <- function(x = matrix()) {
   m <- NULL
   set <- function(y){
@@ -17,8 +23,11 @@ makeMatrix <- function(x = matrix()) {
 }
 
 
-# Returns the inverse of the matrix.
-#Checks cache to see if the inverse is already computed
+# The second function returns the inverse of the matrix. The function checks if
+# the inverse has already been computed. If it has that it returns the result and
+# skips the computation. Else it computes the inverse and sets the value in the cache
+# This function uses solve with assumes that the matrix is invertible
+
 
 cacheSolve <- function(x, ...) {
   m <- x$getsolve()
